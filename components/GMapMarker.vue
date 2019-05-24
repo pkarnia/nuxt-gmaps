@@ -20,6 +20,9 @@ export default {
   methods: {
     initMarker(){
       let child = undefined;
+      let events = ['click', 'mouseenter', 'mouseleave'];
+      this.position.lat = parseFloat(this.position.lat);
+      this.position.lng = parseFloat(this.position.lng);
       this.marker = new this.$parent.google.maps.Marker({
         position: this.position,
         map: this.$parent.map,
@@ -33,10 +36,12 @@ export default {
         child.initInfoWindow();
       }
 
-      this.marker.addListener('click', (e) =>{
-        if(child !== undefined) child.infoWindow.open(this.$parent.map, this.marker);
-        this.$emit('click', {position: this.position, map: this.$parent.map, markers: this.$parent.markers})
-      });
+      events.forEach(event =>{
+        this.marker.addListener('click', (e) =>{
+          if(child !== undefined && event === 'click') child.infoWindow.open(this.$parent.map, this.marker);
+          this.$emit(event, {position: this.position, map: this.$parent.map, markers: this.$parent.markers})
+        });
+      })
     }
   },
 

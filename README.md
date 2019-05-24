@@ -25,7 +25,7 @@ modules: [
 	:zoom="6">
 	<GMapMarker v-for="location in locations"
 		:key="location.id"
-		:position="{lat: parseFloat(location.lat), lng: parseFloat(location.lng)}"
+		:position="{lat: location.lat, lng: location.lng}"
 		:options="{icon: location === currentLocation ? pins.selected : pins.notSelected}"
 		@click="currentLocation = location">
 		<GMapInfoWindow>
@@ -67,3 +67,7 @@ data(){
   }
 }
 ```
+### Marker Events
+- Click
+- Mouseenter
+- Mouseleave
