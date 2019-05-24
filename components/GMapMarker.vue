@@ -37,7 +37,7 @@ export default {
       }
 
       events.forEach(event =>{
-        this.marker.addListener('click', (e) =>{
+        this.marker.addListener(event, (e) =>{
           if(child !== undefined && event === 'click') child.infoWindow.open(this.$parent.map, this.marker);
           this.$emit(event, {position: this.position, map: this.$parent.map, markers: this.$parent.markers})
         });
