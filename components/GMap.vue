@@ -46,13 +46,18 @@ export default {
     }
   },
 
-	mounted(){
-    GoogleMapsApiLoader({
-      apiKey: this.$GMaps
-    }).then((google) => {
-      this.google = google
-      this.initMap();
-    })
+	async mounted(){
+    if(this.$GMaps.loaded === false){
+      this.$GMaps.loaded = true;
+      try{
+        const google = await GoogleMapsApiLoader({
+          apiKey: this.$GMaps.apiKey
+        })
+        this.google = google;
+        this.initMap();
+      } catch(e){
+      }
+    }
   },
 
   methods: {

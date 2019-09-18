@@ -17,6 +17,7 @@ export default {
       this.infoWindow = new google.maps.InfoWindow({
         content: this.$el.innerHTML
       });
+      this.$parent.marker.infoWindow = this.infoWindow;
     }
   },
 }
