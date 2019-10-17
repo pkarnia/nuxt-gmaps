@@ -60,6 +60,10 @@ export default {
     }
   },
 
+  beforeDestroy(){
+    this.$GMaps.loaded = false;
+  },
+
   methods: {
     initMap(){
       this.map = new google.maps.Map(this.$refs.map, {
