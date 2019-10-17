@@ -1,6 +1,6 @@
 {
   "name": "nuxt-gmaps",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Nuxt Google Maps Module",
   "license": "MIT",
   "author": "Dario Ferderber <dario.ferderber@broj42.com>",
