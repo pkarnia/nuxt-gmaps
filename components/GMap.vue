@@ -62,6 +62,8 @@ export default {
 
         this.google = google;
         this.initMap();
+        this.$emit('init', this.google);
+        this.$emit('loaded', this.google);
       } catch(e){
       }
     }
