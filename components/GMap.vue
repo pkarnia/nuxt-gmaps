@@ -50,9 +50,16 @@ export default {
     if(this.$GMaps.loaded === false){
       this.$GMaps.loaded = true;
       try{
-        const google = await GoogleMapsApiLoader({
+        let GMapSettings = {
           apiKey: this.$GMaps.apiKey
-        })
+        }
+
+        if(this.$GMaps.libraires !== undefined){
+          GMapSettings['libraires'] = this.$GMaps.libraires
+        }
+
+        const google = await GoogleMapsApiLoader(GMapSettings)
+
         this.google = google;
         this.initMap();
       } catch(e){
