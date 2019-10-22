@@ -1,7 +1,7 @@
 # Nuxt GMaps
 Try it out here:
 [Nuxt.js Google Maps Module](https://codesandbox.io/s/6j6zw48l83)
-
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FJPYXXXL4SQSE&source=url)
 ### Usage
 | npm install nuxt-gmaps | yarn add nuxt-gmaps |
 |--|--|
@@ -9,7 +9,8 @@ Try it out here:
 //nuxt.config.js
 modules: [
   ['nuxt-gmaps', {
-    key: '<API-Key>'
+    key: '<API-Key>',
+    //you can use libraries: ['places']
   }]
 ]
 ```
