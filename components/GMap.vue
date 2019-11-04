@@ -43,6 +43,27 @@ export default {
       google: null,
       markerCluster: null,
       markers: [],
+      events: [
+        'bounds_changed',
+        'center_changed',
+        'click',
+        'dblclick',
+        'drag',
+        'dragend',
+        'dragstart',
+        'heading_changed',
+        'idle',
+        'maptypeid_changed',
+        'mousemove',
+        'mouseout',
+        'mouseover',
+        'projection_changed',
+        'resize',
+        'rightclick',
+        'tilesloaded',
+        'tilt_changed',
+        'zoom_changed',
+      ]
     }
   },
 
@@ -85,9 +106,17 @@ export default {
         child.initMarker();
       });
 
+      this.map['markers'] = this.markers;
+
       if(Object.keys(this.cluster).length > 0){
         this.markerCluster = new MarkerClusterer(this.map, this.markers, {...this.cluster.options});
       }
+
+      this.events.forEach(event =>{
+        this.map.addListener(event, (e) =>{
+          this.$emit(event, {map: this.map, event: e})
+        });
+      })
     }
   }
 }

@@ -14,13 +14,13 @@ export default {
   data(){
     return{
       marker: null,
+      events: ['click', 'mouseover', 'mouseout']
     }
   },
 
   methods: {
     initMarker(){
       let child = undefined;
-      let events = ['click', 'mouseenter', 'mouseleave'];
       this.position.lat = parseFloat(this.position.lat);
       this.position.lng = parseFloat(this.position.lng);
       this.marker = new this.$parent.google.maps.Marker({
@@ -36,10 +36,10 @@ export default {
         child.initInfoWindow();
       }
 
-      events.forEach(event =>{
-        this.marker.addListener(event, (e) =>{
+      this.events.forEach(event =>{
+        this.$parent.google.maps.event.addListener(this.marker, event, (e) =>{
           if(child !== undefined && event === 'click') child.infoWindow.open(this.$parent.map, this.marker);
-          this.$emit(event, {position: this.position, map: this.$parent.map, markers: this.$parent.markers, marker: this.marker})
+          this.$emit(event, {position: this.position, event: e, map: this.$parent.map, marker: this.marker})
         });
       })
     }
