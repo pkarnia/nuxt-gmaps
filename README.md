@@ -18,8 +18,8 @@ modules: [
 ### Documentation
 [Official Google Documentation](https://developers.google.com/maps/documentation/javascript/tutorial)
 
-### Options
-- key -> API key
+### 🔧 Options
+- key
 - libraries
 
 ### 📍️ Marker Events
@@ -27,7 +27,7 @@ modules: [
 - mouseover
 - mouseout
 
-### 🖱️ Map Events
+### 🗺️️ Map Events
 - bounds_changed
 - center_changed
 - click
@@ -76,36 +76,35 @@ modules: [
 ```
 ```javascript
 data() {
-return {
-  currentLocation: {},
-  locations: [
-    {
-      lat: 44.933076,
-      lng: 15.629058
+  return {
+    currentLocation: {},
+    locations: [
+      {
+        lat: 44.933076,
+        lng: 15.629058
+      },
+      {
+        lat: 45.815,
+        lng: "15.9819"
+      },
+      {
+        lat: "45.12",
+        lng: "16.21"
+      }
+    ],
+    pins: {
+      selected: "data:image/png;base64,iVBORw0KGgo...",
+      notSelected: "data:image/png;base64,iVBORw0KGgo..."
     },
-    {
-      lat: 45.815,
-      lng: "15.9819"
-    },
-    {
-      lat: "45.12",
-      lng: "16.21"
-    }
-  ],
-  pins: {
-    selected:
-      "data:image/png;base64,iVBORw0KGgo...",
-    notSelected:
-      "data:image/png;base64,iVBORw0KGgo..."
-  },
-  mapStyle: [...],
-  clusterStyle: [
-    {
-      url: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m1.png",
-      width: 56,
-      height: 56,
-      textColor: "#fff"
-    }
-  ]
+    mapStyle: [...],
+    clusterStyle: [
+      {
+        url: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m1.png",
+        width: 56,
+        height: 56,
+        textColor: "#fff"
+      }
+    ]
+  }
 }
 ```
