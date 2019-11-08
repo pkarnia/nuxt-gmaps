@@ -1,9 +1,10 @@
-# Nuxt GMaps
+# 🌍 Nuxt GMaps
 Try it out here:
 [Nuxt.js Google Maps Module](https://codesandbox.io/s/6j6zw48l83)
-### Usage
-| npm install nuxt-gmaps | yarn add nuxt-gmaps |
-|--|--|
+### 🚀 Usage
+```bash
+npm i nuxt-gmaps
+```
 ```javascript
 //nuxt.config.js
 modules: [
@@ -17,12 +18,16 @@ modules: [
 ### Documentation
 [Official Google Documentation](https://developers.google.com/maps/documentation/javascript/tutorial)
 
-### Marker Events
+### Options
+- key -> API key
+- libraries
+
+### 📍️ Marker Events
 - click
 - mouseover
 - mouseout
 
-### Map Events
+### 🖱️ Map Events
 - bounds_changed
 - center_changed
 - click
@@ -46,15 +51,19 @@ modules: [
 ### Example
 ```html
 <GMap
-  :cluster="{options: {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'}}" :center="{lat: locations[0].lat, lng: locations[0].lng}"
-  :options="{fullscreenControl: false, streetViewControl: false, mapTypeControl: false, zoomControl: true, gestureHandling: 'cooperative', styles: mapStyle}"
+  ref="gMap"
+  :cluster="{options: {styles: clusterStyle}}"
+  :center="{lat: locations[0].lat, lng: locations[0].lng}"
+  :options="{fullscreenControl: false, styles: mapStyle}"
   :zoom="6"
-  @dragstart="positionChanged($event)">
-  <GMapMarker v-for="location in locations"
+>
+  <GMapMarker
+    v-for="location in locations"
     :key="location.id"
     :position="{lat: location.lat, lng: location.lng}"
     :options="{icon: location === currentLocation ? pins.selected : pins.notSelected}"
-    @click="currentLocation = location">
+    @click="currentLocation = location"
+  >
     <GMapInfoWindow>
       <code>
         lat: {{ location.lat }},
@@ -66,24 +75,37 @@ modules: [
 
 ```
 ```javascript
-data(){
-  return{
-    locations: [
-      {lat: 44.933076, lng: 15.629058},
-      {lat: 45.8150, lng: 15.9819},
-      {lat: 45.12, lng: 16.21}
-    ],
-
-    pins: {
-      selected: 'data:image/png;base64,iVBOAAANSUhEUgAAAB...',
-      notSelected: 'data:image/png;base64,iVBORw0CAM...'
+data() {
+return {
+  currentLocation: {},
+  locations: [
+    {
+      lat: 44.933076,
+      lng: 15.629058
     },
-
-    mapStyle: [
-      ...
-    ],
-
-    currentLocation: {}
-  }
+    {
+      lat: 45.815,
+      lng: "15.9819"
+    },
+    {
+      lat: "45.12",
+      lng: "16.21"
+    }
+  ],
+  pins: {
+    selected:
+      "data:image/png;base64,iVBORw0KGgo...",
+    notSelected:
+      "data:image/png;base64,iVBORw0KGgo..."
+  },
+  mapStyle: [...],
+  clusterStyle: [
+    {
+      url: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m1.png",
+      width: 56,
+      height: 56,
+      textColor: "#fff"
+    }
+  ]
 }
 ```
