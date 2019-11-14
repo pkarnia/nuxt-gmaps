@@ -27,7 +27,9 @@ modules: [
 - mouseover
 - mouseout
 
-### 🗺️️ Map Events
+### 🗺️️ Map Event
+- init
+- loaded
 - bounds_changed
 - center_changed
 - click
