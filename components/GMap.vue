@@ -75,8 +75,8 @@ export default {
           apiKey: this.$GMaps.apiKey
         }
 
-        if(this.$GMaps.libraires !== undefined){
-          GMapSettings['libraires'] = this.$GMaps.libraires
+        if(this.$GMaps.libraries !== undefined){
+          GMapSettings['libraries'] = this.$GMaps.libraries
         }
 
         const google = await GoogleMapsApiLoader(GMapSettings)
