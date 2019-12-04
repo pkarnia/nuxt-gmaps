@@ -79,15 +79,16 @@ export default {
           GMapSettings['libraries'] = this.$GMaps.libraries
         }
 
-        const google = await GoogleMapsApiLoader(GMapSettings)
-
-        this.google = google;
-        this.initMap();
-        this.$emit('init', this.google);
-        this.$emit('loaded', this.google);
+        const google = GoogleMapsApiLoader(GMapSettings)
+        this.$GMaps.google = google;
       } catch(e){
       }
     }
+
+    this.google = await this.$GMaps.google;
+    this.initMap();
+    this.$emit('init', this.google);
+    this.$emit('loaded', this.google);
   },
 
   beforeDestroy(){
