@@ -1,5 +1,5 @@
 <template>
-  <div class="GMap__Marker">
+  <div class="GMap__Marker" v-if="!markerLoaded">
     <slot v-if="marker === null"/>
   </div>
 </template>
@@ -14,6 +14,7 @@ export default {
   data(){
     return{
       marker: null,
+      markerLoaded: false,
       events: ['click', 'mouseover', 'mouseout']
     }
   },
@@ -30,6 +31,7 @@ export default {
       });
 
       this.$parent.markers.push(this.marker);
+      this.markerLoaded = true;
 
       if(this.$children.length > 0){
         child = this.$children[0];
