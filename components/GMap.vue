@@ -103,6 +103,18 @@ export default {
         ...this.options
       });
 
+      this.initMarkers();
+      this.events.forEach(event =>{
+        this.map.addListener(event, (e) =>{
+          this.$emit(event, {map: this.map, event: e})
+        });
+      })
+    },
+
+    initMarkers(){
+      if(this.markerCluster !== null) this.markerCluster.clearMarkers()
+      if(this.markers.length > 0) this.markers = [];
+
       this.$children.forEach(child =>{
         child.initMarker();
       });
@@ -112,12 +124,6 @@ export default {
       if(Object.keys(this.cluster).length > 0){
         this.markerCluster = new MarkerClusterer(this.map, this.markers, {...this.cluster.options});
       }
-
-      this.events.forEach(event =>{
-        this.map.addListener(event, (e) =>{
-          this.$emit(event, {map: this.map, event: e})
-        });
-      })
     }
   }
 }
