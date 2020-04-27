@@ -19,7 +19,6 @@ export default {
 
   methods: {
     init(){
-      console.log(this.$parent)
       this.circle = new this.$parent.google.maps.Circle({
         map: this.$parent.map,
         ...this.options
