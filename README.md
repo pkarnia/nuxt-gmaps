@@ -19,7 +19,7 @@ modules: [
 ```
 
 ### 📝 Updates
-- **1.2.1** - Google Map Circle (Documentation: https://developers.google.com/maps/documentation/javascript/examples/circle-simple)
+- **1.2.2** - Google Map Circle (Documentation: https://developers.google.com/maps/documentation/javascript/examples/circle-simple)
 
 ### Documentation
 [Official Google Documentation](https://developers.google.com/maps/documentation/javascript/tutorial)
