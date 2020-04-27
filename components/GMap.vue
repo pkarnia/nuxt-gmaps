@@ -103,7 +103,7 @@ export default {
         ...this.options
       });
 
-      this.initMarkers();
+      this.initChildren();
       this.events.forEach(event =>{
         this.map.addListener(event, (e) =>{
           this.$emit(event, {map: this.map, event: e})
@@ -111,12 +111,12 @@ export default {
       })
     },
 
-    initMarkers(){
+    initChildren(){
       if(this.markerCluster !== null) this.markerCluster.clearMarkers()
       if(this.markers.length > 0) this.markers = [];
 
       this.$children.forEach(child =>{
-        child.initMarker();
+        child.init();
       });
 
       this.map['markers'] = this.markers;

@@ -20,7 +20,7 @@ export default {
   },
 
   methods: {
-    initMarker(){
+    init(){
       let child = undefined;
       this.position.lat = parseFloat(this.position.lat);
       this.position.lng = parseFloat(this.position.lng);

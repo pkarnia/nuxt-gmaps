@@ -1,6 +1,9 @@
 # 🌍 Nuxt GMaps
 Try it out here:
 [Nuxt.js Google Maps Module](https://codesandbox.io/s/6j6zw48l83)
+### Buy me a coffee
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F31MWWL)
+
 ### 🚀 Usage
 ```bash
 npm i nuxt-gmaps
@@ -14,6 +17,9 @@ modules: [
   }]
 ]
 ```
+
+### 📝 Updates
+- **1.2.1** - Google Map Circle (Documentation: https://developers.google.com/maps/documentation/javascript/examples/circle-simple)
 
 ### Documentation
 [Official Google Documentation](https://developers.google.com/maps/documentation/javascript/tutorial)
@@ -73,6 +79,7 @@ modules: [
       </code>
     </GMapInfoWindow>
   </GMapMarker>
+  <GMapCircle :options="circleOptions"/>
 </GMap>
 
 ```
@@ -80,6 +87,9 @@ modules: [
 data() {
   return {
     currentLocation: {},
+    circleOptions: {
+      ...
+    },
     locations: [
       {
         lat: 44.933076,
