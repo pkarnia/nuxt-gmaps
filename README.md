@@ -1,8 +1,11 @@
 # 🌍 Nuxt GMaps
+
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![npm downloads][kofi-src]][kofi-href]
+
 Try it out here:
 [Nuxt.js Google Maps Module](https://codesandbox.io/s/6j6zw48l83)
-### Buy me a coffee
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F31MWWL)
 
 ### 🚀 Usage
 ```bash
@@ -19,6 +22,7 @@ modules: [
 ```
 
 ### 📝 Updates
+- **1.2.3** - Language prop
 - **1.2.2** - Google Map Circle (Documentation: https://developers.google.com/maps/documentation/javascript/examples/circle-simple)
 
 ### Documentation
@@ -60,6 +64,7 @@ modules: [
 ```html
 <GMap
   ref="gMap"
+  language="en"
   :cluster="{options: {styles: clusterStyle}}"
   :center="{lat: locations[0].lat, lng: locations[0].lng}"
   :options="{fullscreenControl: false, styles: mapStyle}"
@@ -120,3 +125,13 @@ data() {
   }
 }
 ```
+
+<!-- Badges -->
+[npm-version-src]: https://badgen.net/npm/v/nuxt-gmaps/latest
+[npm-version-href]: https://npmjs.com/package/nuxt-gmaps
+
+[kofi-src]: https://badgen.net/badge/icon/kofi?icon=kofi&label=support
+[kofi-href]: https://ko-fi.com/darioferderber
+
+[npm-downloads-src]: https://badgen.net/npm/dm/nuxt-gmaps
+[npm-downloads-href]: https://npmjs.com/package/nuxt-gmaps

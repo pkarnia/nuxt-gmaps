@@ -7,7 +7,7 @@
 
 <script>
 import GoogleMapsApiLoader from 'google-maps-api-loader'
-var MarkerClusterer = require('node-js-marker-clusterer');
+const MarkerClusterer = require('node-js-marker-clusterer');
 export default {
   props: {
     options: {
@@ -16,6 +16,7 @@ export default {
         return {}
       }
     },
+    language: {},
     zoom: {
       type: Number,
       default: 10
@@ -72,7 +73,8 @@ export default {
       this.$GMaps.loaded = true;
       try{
         let GMapSettings = {
-          apiKey: this.$GMaps.apiKey
+          apiKey: this.$GMaps.apiKey,
+          language: this.language
         }
 
         if(this.$GMaps.libraries !== undefined){
