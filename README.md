@@ -22,6 +22,7 @@ modules: [
 ```
 
 ### 📝 Updates
+- **1.2.4** - Options for GMapInfoWindow
 - **1.2.3** - Language prop
 - **1.2.2** - Google Map Circle (Documentation: https://developers.google.com/maps/documentation/javascript/examples/circle-simple)
 
@@ -77,7 +78,7 @@ modules: [
     :options="{icon: location === currentLocation ? pins.selected : pins.notSelected}"
     @click="currentLocation = location"
   >
-    <GMapInfoWindow>
+    <GMapInfoWindow :options="{maxWidth: 200}">
       <code>
         lat: {{ location.lat }},
         lng: {{ location.lng }}

@@ -6,6 +6,14 @@
 
 <script>
 export default {
+  props: {
+    options: {
+      default: () => {
+        return {}
+      }
+    }
+  },
+
   data(){
     return{
       infoWindow: null
@@ -15,7 +23,8 @@ export default {
 	methods: {
     initInfoWindow(){
       this.infoWindow = new google.maps.InfoWindow({
-        content: this.$el.innerHTML
+        content: this.$el.innerHTML,
+        ...this.options
       });
       this.$parent.marker.infoWindow = this.infoWindow;
     }
