@@ -23,7 +23,7 @@ export default {
 	methods: {
     initInfoWindow(){
       this.infoWindow = new google.maps.InfoWindow({
-        content: this.$el.innerHTML,
+        content: this.$el,
         ...this.options
       });
       this.$parent.marker.infoWindow = this.infoWindow;
