@@ -1,6 +1,6 @@
 <template>
   <div class="GMap__Marker" v-if="!markerLoaded">
-    <slot v-if="marker === null"/>
+    <slot/>
   </div>
 </template>
 
