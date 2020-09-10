@@ -22,6 +22,8 @@ export default {
   methods: {
     init(){
       let child = undefined;
+      this.marker = null;
+      this.markerLoaded = false;
       this.position.lat = parseFloat(this.position.lat);
       this.position.lng = parseFloat(this.position.lng);
       this.marker = new this.$parent.google.maps.Marker({
