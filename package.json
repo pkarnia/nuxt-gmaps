@@ -21,7 +21,7 @@
     "components"
   ],
   "dependencies": {
-    "google-maps-api-loader": "^1.1.1",
-    "node-js-marker-clusterer": "^1.0.0"
+    "@googlemaps/js-api-loader": "^1.12.9",
+    "@googlemaps/markerclusterer": "^1.0.13"
   }
 }
