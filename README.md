@@ -1,4 +1,5 @@
 # 🌍 Nuxt GMaps
+Fork of https://gitlab.com/broj42/nuxt-gmaps.git
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
