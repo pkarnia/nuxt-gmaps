@@ -51,7 +51,7 @@ export default {
 
   watch:{
     'options.icon'(value){
-      this.marker.setIcon(value)
+      if(this.marker) {this.marker.setIcon(value);}
     }
   }
 }
