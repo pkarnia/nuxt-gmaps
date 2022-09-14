@@ -15,7 +15,7 @@ export default {
     return{
       marker: null,
       markerLoaded: false,
-      events: ['click', 'mouseover', 'mouseout']
+      events: ['click', 'mouseover', 'mouseout', 'dragend']
     }
   },
 
