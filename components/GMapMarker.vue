@@ -15,7 +15,9 @@ export default {
     return{
       marker: null,
       markerLoaded: false,
-      events: ['click', 'mouseover', 'mouseout', 'dragend']
+      events: ['click', 'dblclick', 'contextmenu',
+        'mouseover', 'mouseout', 'mouseup', 'mousedown',
+        'dragstart','drag','dragend']
     }
   },
 
