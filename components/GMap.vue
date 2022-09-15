@@ -137,7 +137,7 @@ export default {
       this.markerCluster = new MarkerClusterer({
         map,
         markers,
-        clusterOptions,
+        ...clusterOptions,
       });
     }
   },
