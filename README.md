@@ -23,6 +23,8 @@ modules: [
 ```
 
 ### 📝 Updates
+- **2.1.0** - Add Google Map Polyline
+- **2.0.0** - Update dependencies, fix marker bugs, update marker event listeners 
 - **1.2.4** - Options for GMapInfoWindow
 - **1.2.3** - Language prop
 - **1.2.2** - Google Map Circle (Documentation: https://developers.google.com/maps/documentation/javascript/examples/circle-simple)
