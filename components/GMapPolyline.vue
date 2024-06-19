@@ -17,14 +17,30 @@ export default {
     }
   },
 
-  methods: {
-    init(){
-      this.polyline = new this.$parent.google.maps.Polyline({
-        map: this.$parent.map,
-        ...this.options
-      });
+  mounted() {
+    this.init();
+  },
 
-      this.polylineLoaded = true;
+  destroyed() {
+    this.polyline.setMap(null);
+  },
+
+  methods: {
+    init() {
+      if (this.$parent.google) {
+        this.polyline = new this.$parent.google.maps.Polyline({
+          map: this.$parent.map,
+          ...this.options
+        });
+
+        this.polylineLoaded = true;
+      }
+    }
+  },
+
+  watch: {
+    'options'(value) {
+      this.options = value;
     }
   },
 }
