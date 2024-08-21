@@ -23,6 +23,7 @@ modules: [
 ```
 
 ### 📝 Updates
+- **2.2.0** - Utilize mounted and destroyed hooks within child components
 - **2.1.0** - Add Google Map Polyline
 - **2.0.0** - Update dependencies, fix marker bugs, update marker event listeners 
 - **1.2.4** - Options for GMapInfoWindow

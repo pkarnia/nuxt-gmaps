@@ -10,21 +10,31 @@ export default {
     options: Object,
   },
 
-  data(){
-    return{
+  data() {
+    return {
       circle: null,
       circleLoaded: false
     }
   },
 
-  methods: {
-    init(){
-      this.circle = new this.$parent.google.maps.Circle({
-        map: this.$parent.map,
-        ...this.options
-      });
+  mounted() {
+    this.init();
+  },
 
-      this.circleLoaded = true;
+  destroyed() {
+    this.circle.setMap(null);
+  },
+
+  methods: {
+    init() {
+      if (this.$parent.google) {
+        this.circle = new this.$parent.google.maps.Circle({
+          map: this.$parent.map,
+          ...this.options
+        });
+
+        this.circleLoaded = true;
+      }
     }
   },
 }
