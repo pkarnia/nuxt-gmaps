@@ -17,12 +17,13 @@ npm i nuxt-gmaps
 modules: [
   ['nuxt-gmaps', {
     key: '<API-Key>',
-    //you can use libraries: ['places']
+    //you can use libraries: ['places','visualization']
   }]
 ]
 ```
 
 ### 📝 Updates
+- **2.3.0** - Add HeatMapLayer visualization
 - **2.2.0** - Utilize mounted and destroyed hooks within child components
 - **2.1.0** - Add Google Map Polyline
 - **2.0.0** - Update dependencies, fix marker bugs, update marker event listeners 
